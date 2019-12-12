@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="UTF-8">
+
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            $(function() {
+                var comments = $("#comments");
+                $.getJSON("data.php", function(json) {
+                    $.each(json, function(index, array) {
+                        var txt = "<p><strong>" + array["user"] + "</strong>：" + array["comment"] + "<span>" + array["addtime"] + "</span></p>";
+                        comments.append(txt);
+                    }); 
+                });
+                //display the comments
+                $("#add").click(function() {
+                    var user = $("#user").val();
+                    var txt = $("#txt").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "comment.php",
+                        data: "user=" + user + "&txt=" + txt,
+                        dataType : 'JSON',
+                        success: function(res) {
+                            if (res.code == 1) {
+                                var str = "<p><strong>" + res.user + "</strong>：" + res.txt + "<span>just</span></p>";
+                                comments.append(str);
+                                $("#message").show().html("publish success！").fadeOut(1000);
+                                $("#txt").attr("value", "");
+                            } else {
+                                $("#message").show().html(res.message).fadeOut(1000);
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+
+</head>
+<body>
+ <style type="text/css">
+            #comments{
+                margin:10px auto;
+            }
+            #post{
+                margin-top:10px;
+            }
+            #comments p,
+            #post p{
+                line-height:30px;
+            }
+            #comments p span{
+                margin:4px;
+                color:#bdb8b8;
+            }
+            #message{
+                position: absolute;
+                top: 40%;
+                left: 100px;
+                width: 200px;
+                height: 50px;
+                background: #f2f2f2;
+                border: 1px solid;
+                border-radius: 3px;
+                line-height: 50px;
+                text-align: center;
+                display: none;
+            }
+        </style>
+
+
+            <div>
+                <div id="post">
+                    <p>name：</p>
+                    <p><input type="text" class="input" id="user" /></p>
+                    <p>content：</p>
+                    <p><textarea class="input" id="txt" style="width:100%; height:80px"></textarea></p>
+                    <p><input type="submit" class='btn'value="publish" id="add" /></p>
+                    <div id="message"></div>
+                </div>
+                <div id="comments"></div>
+            </div>
+
+</body>
+</html>
