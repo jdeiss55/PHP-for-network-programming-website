@@ -2,6 +2,7 @@
 session_start();
 $username = "";
 $email = "";
+$topic="";
 $errors = array();
 
 //connect to database
@@ -67,14 +68,8 @@ if (isset($_GET['logout'])) {
 
 //insert topics
 if(isset($_POST['index'])){
-	$topic = mysqli_real_escape_string($db, $_POST['topic']);
-	if(empty($topic)) {
-		array_push($errors, "Please enter a topic");
-	}
-	if(count($errors) == 0){
-		$query = "UPDATE users SET search = '$topic'";
-	}
-	mysqli_query($db, $sql);
+$topic = mysqli_real_escape_string($db, $_POST['q']);
+$sql = "INSERT INTO topics(topic) VALUES '$topic'";
+mysqli_query($db, $sql);
 }
-
 ?>

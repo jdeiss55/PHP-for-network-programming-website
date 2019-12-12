@@ -137,4 +137,7 @@ form, .content, .search {
 	position:relative;
 	top:1px;
 }
+
+.prev {
+	margin-left: 100px;
 }
