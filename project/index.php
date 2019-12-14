@@ -15,7 +15,7 @@ if(empty($_SESSION['username'])) {
 	<div class="header">
 		<h2>Home Page</h2>
 	</div>
-	<div class="content">
+	<div style="width: 50%;" class="content">
 		<?php if (isset($_SESSION['success'])): ?>
 			<div class="error success">
 				<h3>
@@ -32,9 +32,9 @@ if(empty($_SESSION['username'])) {
 			<p><a href = "index.php?logout='1'" style="color: red;">Logout</a></p>
 		<?php endif ?>
 	</div>
-	<div class="search">
+	<div class="search" style="width: 50%;">
    		<form method="get" action="http://news.google.com/search" target = "_blank">
-   		<input style = "width: 265px;" type="text" name = "q" class="searchTerm" placeholder = "Input a general topic...">
+   		<input style = "width: 50%;" type="text" name = "q" class="searchTerm" placeholder = "Input a general topic...">
         	<button type="submit" class="searchButton" name = "button">
       		Search
      		</button>

@@ -11,9 +11,7 @@
 			<p>Welcome to the chat room, <strong><?php echo $_SESSION['username']; ?></strong>.</br>
 			Feel free to discuss any topics with other users!</p>
 	</div>
-	<div class = "prev">
-	<a href="index.php">Previous Page</a>
-	</div>
+
 
 	<?php
 if (isset($_GET['enSubmit']) && isset($_GET['uname']) && isset($_GET['rname'])){
@@ -53,20 +51,20 @@ if (isset($_GET['enSubmit']) && isset($_GET['uname']) && isset($_GET['rname'])){
 	}
 ?>
 <body OnLoad="document.myform.txt.focus()">
-<form action="" method="post" name="myform">
-<table style="border: 1px solid #000000;width: 752px" align="center">
+<form style="width: 50%;"action="" method="post" name="myform">
+<table style="width: 100%; border-style: groove;border-width: 1px;" align="center">
 	<tr>
-		<td style="font-family: 'Times New Roman', Times, serif;font-size: 17pt;text-align: center;width: 537; color: #2214B9;border-style: solid;border-width: 1px; height: 350px;">
-			<textarea readonly="readonly" name="txtchat" style="width: 581px; color: #000000; height: 365px; background-color: #DCDCDC; font-family: 'times New Roman', Times, serif; font-size: 12pt;"><?php echo "Welcome to the $room chatroom...\n$contents"?> </textarea>
+		<td style="font-family: 'Times New Roman', Times, serif;font-size: 16pt;text-align: center; color: #2214B9;border-style: groove;border-width: 1px; height: 350px;">
+			<textarea readonly="readonly" name="txtchat" style="color: #000000; height: 365px; background-color: #DCDCDC; font-family: 'times New Roman', Times, serif; font-size: 12pt;"><?php echo "Welcome to the $room chatroom...\n$contents"?> </textarea>
 		</td>
-		<td style="font-family: 'Times New Roman', Times, serif;font-size: 17pt;text-align: center;color: #2214B9;border-style: solid;border-width: 1px; height: 349px; width: 143px;">
-			<textarea readonly="readonly"  contenteditable="false"  name="txtusers" style=";width: 163px; height: 365px; background-color: #DCDCDC; font-family: 'times New Roman', Times, serif; font-size: 12pt; font-weight: bold; text-align: center;"><?php echo $users?></textarea></td>
+		<td style="font-family: 'Times New Roman', Times, serif;font-size: 16pt;text-align: center;color: #2214B9;border-style: groove;border-width: 1px; height: 349px;">
+			<textarea readonly="readonly"  contenteditable="false"  name="txtusers" style="; height: 365px; background-color: #DCDCDC; font-family: 'times New Roman', Times, serif; font-size: 12pt; font-weight: bold; text-align: center;"><?php echo $users?></textarea></td>
 	</tr>
 	<tr>
-		<td style="width: 537; border-style: solid;border-width: 1px;text-align: left; height: 39px; font-size: 14pt;">
-		<textarea id="txtt"  name="txt" style="width: 581px; height: 79px; font-family: 'times New Roman', Times, serif; font-size: 12pt"></textarea></td>
-		<td style="border-style: solid;border-width: 1px; height: 39px;padding-left: 8px; width: 143px; text-align: center;">
-		<input name="Send" style="width: 118px; height: 63px; font-size: 30pt; font-family: 'Times New Roman', Times, serif; color: white; background-color:#f24537;" type="submit" value="Send"></td>
+		<td style=" border-style: groove;border-width: 1px;text-align: left; height: 39px; font-size: 14pt;">
+		<textarea id="txtt"  name="txt" style=" height: 79px; font-family: 'times New Roman', Times, serif; font-size: 12pt"></textarea></td>
+		<td style="border-style: groove;border-width: 1px; height: 39px;padding-left: 8px; text-align: center;">
+		<input name="Send" style="padding: 10px; font-size: 16pt; font-family: 'Times New Roman', Times, serif; color: white; background-color:#f24537;" type="submit" value="Send"></td>
 	</tr>
 </table>
 </form>
@@ -74,23 +72,23 @@ if (isset($_GET['enSubmit']) && isset($_GET['uname']) && isset($_GET['rname'])){
 <?php
 }else {
 ?>
-<form method="get" action="">
-<table style="border: 1px solid #000000;width: 770px" align="center">
+<form style="width: 50%;"method="get" action="">
+<table style="width: 100%;border: 2px groove orange;" align="center">
 	<tr>
-		<td style="font-family: 'Times New Roman', Times, serif;font-size: 17pt;text-align: left; width: 432px; color: white; background-color: red;border-style: solid;border-width: 1px;">Nickname:</td>
-		<td style="border-style: solid; border-width: 1px; font-family: 'Times New Roman', Times, serif; font-size: 17pt; text-align: left; color: #2214B9; width: 430px;">
-		<input name="uname" style="font-size: medium; width: 420px; color: #B01919;"></td>
+		<td style="font-family: 'Times New Roman', Times, serif; font-size: 16pt; text-align: left; color: white; width: 20%; padding: 10px; background-color: red; border-style: groove;border-width: 1px;">Nickname:</td>
+		<td style="border-style: groove; border-width: 1px; font-family: 'Times New Roman', Times, serif; font-size: 16pt; text-align: left; color: #2214B9;">
+		<input name="uname" style="font-size: 16px; color: #B01919;"></td>
 	</tr>
 	<tr>
-		<td style="font-family: 'Times New Roman', Times, serif;font-size: 17pt;text-align: left; width: 432px; color: white; background-color: red; border-style: solid;border-width: 1px;">Select Room:</td>
-		<td style="border-style: solid; border-width: 1px; font-family: 'Times New Roman', Times, serif; font-size: 17pt; text-align: left; color: #2214B9; width: 430px;">
-		<select name="rname" style="width: 150px; font-size: medium; color: #B01919;">
+		<td style="font-family: 'Times New Roman', Times, serif;font-size: 16pt;text-align: left; color: white; width: 20%; padding: 10px; background-color: red; border-style: groove;border-width: 1px;">Select Room:</td>
+		<td style="border-style: groove; border-width: 1px; font-family: 'Times New Roman', Times, serif; font-size: 16pt; text-align: left; color: #2214B9;">
+		<select name="rname" style=" font-size: 16px; color: #B01919;">
 		<option selected="">General Chat</option>
 		</select></td>
 	</tr>
 	<tr>
-		<td style="font-family: 'Times New Roman', Times, serif;font-size: 17pt;text-align: center; color: #2214B9; border-left-style: solid; border-left-width: 1px; border-right-style: none; border-right-width: medium; border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px; padding-top:10px;padding-bottom:10px" colspan="2">
-		<input name="enSubmit" style="width: 118px; height: 63px; font-size: 30pt; font-family: 'Times New Roman', Times, serif; color: white; background-color:#f24537;" type="submit" value="Enter"></td>
+		<td style="font-family: 'Times New Roman', Times, serif;font-size: 16pt;text-align: center; color: #2214B9; border-style: groove; border-width: 1px; padding-top:10px;padding-bottom:10px" colspan="2">
+		<input name="enSubmit" style="font-size: 16pt; font-family: 'Times New Roman', Times, serif; color: white; padding: 10px; background-color:#f24537;" type="submit" value="Enter"></td>
 	</tr>
 </table>
 </form>
@@ -107,7 +105,9 @@ el=document.myform.txtt
         range.collapse(false);
         range.select();
     }</script>
- 
+ 	<div class = "prev">
+	<a href="index.php">Previous Page</a>
+	</div>
 </body>
 
 </html>
