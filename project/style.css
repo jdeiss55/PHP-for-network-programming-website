@@ -109,6 +109,7 @@ form, .content, .search {
     border-radius: 0px;
     box-shadow: 0px 0px 5px rgba(66,66,66,.75);
     text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+
 }
 
 .chatButton{
@@ -126,7 +127,8 @@ form, .content, .search {
 	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #810e05;
-	margin-left: 585px;
+	margin-left: 35%;
+	margin-right:35%;
 
 }
 .chatButton:hover {
